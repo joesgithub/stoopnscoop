@@ -14,3 +14,4 @@ jobs:
         server: ftp.joeandtheweb.com
         username: stoopnscoop@stoopnscoop.com
         password: ${{ secrets.ftp_pass }}
+        local-dir: ./dist/
