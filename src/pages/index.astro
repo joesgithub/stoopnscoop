@@ -1,11 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getProducts } from '../services/cms';
+
+const catalogue = await getProducts();
 ---
 
 <Layout title="Stoop n' Scoop">
     <main class="content">
         <img class="logo" src="images/stoopnscoop-logo.svg" />
         <p class="title">✨Coming Soon✨</p>
+        <ul>
+            {catalogue.children.map(child => (
+                <li><a href={child.path}>{child.name}</a></li>
+            ))}
+        </ul>
     </main>
 </Layout>
 
