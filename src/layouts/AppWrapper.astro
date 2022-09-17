@@ -1,4 +1,7 @@
+---
+// .astro instead of .ts because Astro having trouble with CommonJS package import
 import { createClient } from '@crystallize/js-api-client';
+import App from '../components/App';
 
 // Create Crystallize GraphQL client
 const apiClient = createClient({
@@ -49,12 +52,6 @@ const productsQuery = `
     }
 `
 
-const getProducts = async () => {
-    const { catalogue } = await apiClient.catalogueApi(productsQuery);
-    console.log('cms', JSON.stringify(catalogue));
-    return catalogue;
-}
-
-export {
-    getProducts
-}
+const { catalogue: { children } } = await apiClient.catalogueApi(productsQuery);
+---
+<App client:load products={children} />

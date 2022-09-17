@@ -1,0 +1,14 @@
+.logo {
+	background-color: pink;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	min-height: -webkit-fill-available;
+	transition: opacity 1s;
+}
+
+.animateOut {
+	opacity: 0;
+}

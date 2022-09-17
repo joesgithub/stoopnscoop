@@ -1,59 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { getProducts } from '../services/cms';
-
-const catalogue = await getProducts();
+import HTMLPage from '../layouts/HTMLPage.astro';
+import AppWrapper from '../layouts/AppWrapper.astro';
+import '../styles/pages/index.scss';
 ---
 
-<Layout title="Stoop n' Scoop">
+<HTMLPage title="Stoop n' Scoop">
     <main class="content">
         <img class="logo" src="images/stoopnscoop-logo.svg" />
-        <p class="title">✨Coming Soon✨</p>
-        <ul>
-            {catalogue.children.map(child => (
-                <li><a href={child.path}>{child.name}</a></li>
-            ))}
-        </ul>
+        <AppWrapper />
     </main>
-</Layout>
-
-<style is:global>
-    body {
-        height: 100vh;
-        max-height: -webkit-fill-available;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #EEA2A3;
-    }
-</style>
-<style>
-    .content {
-        width: 50%;
-        min-width: 300px;
-        text-align: center;
-    }
-    
-    .title {
-        font-size: 2rem;
-        font-family: sans-serif;
-        font-weight: bold;
-        animation: colors 3s infinite;
-    }
-
-    @media (min-width: 641px) {
-        .title {
-            font-size: 2.5rem;
-        }
-    }
-    
-    @keyframes colors { 
-      0%, 100% {
-        color: #406EB9;
-      }
-    
-      50% {
-        color: #809BC6;
-      }
-    }
-</style>
+</HTMLPage>
