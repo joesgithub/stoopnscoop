@@ -1,6 +1,8 @@
 import { Fragment } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 
+import Product from '../Product';
+
 import './styles.scss';
 
 const App = (props) => {
@@ -18,9 +20,7 @@ const App = (props) => {
 
     return (
         <>
-            <div class="counter">
-                {prods?.[0].name}
-            </div>
+            {prods?.map(prod => <Product item={prod} />)}
         </>
     );
 }
