@@ -2,4 +2,11 @@
 	width: 100vw;
 	height: 100vh;
 	min-height: -webkit-fill-available;
+
+	&__title {
+		&--end {
+			display: block;
+    		transform: translateX(45px);
+		}
+	}
 }
