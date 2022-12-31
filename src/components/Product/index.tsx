@@ -9,7 +9,7 @@ const Product = (props) => {
         defaultVariant: {
             sku,
             price,
-            images,
+            // images,
         },
         components: [{
             content: {
@@ -27,7 +27,7 @@ const Product = (props) => {
         <div class={`product product--${lowerName}`}>
             <h2 class="product__title">{nameStart} <span class="product__title--end text--zighead">{nameEnd}</span></h2>
             <div class="product__price">${price}.00</div>
-            {images?.map(({url}) => <img class="product__img" src={url} />)}
+            {/*{images?.map(({url}) => <img class="product__img" src={url} />)}*/}
             <div class="product__summary">{summary}</div>
         </div>
     );
